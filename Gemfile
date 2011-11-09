@@ -7,6 +7,8 @@ gem 'rails', '3.0.9'
 
 gem 'sqlite3'
 
+gem 'yaml_db'
+gem 'mysql'
 # Use unicorn as the web server
 # gem 'unicorn'
 
@@ -29,6 +31,7 @@ gem 'sqlite3'
 group :development, :test do
 #   gem 'webrat'
   gem 'rspec'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '2.0.0.beta.18'
   gem "remarkable_activerecord", "4.0.0.alpha4"
+  gem 'factory_girl_rails', '1.0'
 end

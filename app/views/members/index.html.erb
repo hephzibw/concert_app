@@ -1,0 +1,12 @@
+<h1>Index</h1>
+<table>
+  <% @members.each do |member| %>
+  <tr>
+    <td><%= member.id %></td>
+    <td><%= member.name %></td>
+    <td><%= member.email %></td>
+    <td><%= member.contact_no %></td>
+    <td><%= member.city %></td>
+  </tr>
+   <% end %>
+</table>
