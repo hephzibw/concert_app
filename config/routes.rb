@@ -1,6 +1,6 @@
 ConcertApp::Application.routes.draw do
   resources :members
-
+  root :to => "members#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
