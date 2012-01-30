@@ -8,6 +8,20 @@ class MembersController < ApplicationController
     @member = Member.new
   end
 
+  def edit
+    @member = Member.find params[:id]
+  end
+
+  def update
+    @member = Member.find params.delete("id")
+     if @member.update_attributes(params[:member])
+      flash[:success] = "Profile Updated"
+      redirect_to root_path
+    else
+      render 'edit'
+    end
+  end
+
   def create
     @member=Member.new(params[:member])
     if @member.save
