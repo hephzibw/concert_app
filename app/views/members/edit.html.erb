@@ -1,27 +1,3 @@
 <h1>Edit Member</h1>
-<%= @member.inspect %>
-<%= form_for(@member) do |f| %>
-<div class="field">
-  <%= f.label :name %>
-  <br/>
-  <%= f.text_field :name %>
-</div>
-<div class="field">
-  <%= f.label :email %>
-  <br/>
-  <%= f.text_field :email %>
-</div>
-<div class="field">
-  <%= f.label :contact_no %>
-  <br/>
-  <%= f.text_field :contact_no %>
-</div>
-<div class="field">
-  <%= f.label :city, %>
-  <br/>
-  <%= f.text_field :city %>
-</div><br/>
-<div class="actions">
-<%= f.submit "Update" %>
-</div>
-<% end %>
+<%= render 'form' %>
+
