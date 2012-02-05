@@ -31,4 +31,9 @@ class MembersController < ApplicationController
       render :new
     end
   end
+
+  def destroy
+    Member.find(params[:id]).delete
+    redirect_to root_path
+  end
 end

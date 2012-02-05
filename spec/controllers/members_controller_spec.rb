@@ -128,9 +128,25 @@ describe MembersController do
 
     describe "failure" do
       it "should render the edit template" do
-        put :update, {:id => @member.id, :member => {:name=>"", :email=>"", :city=>"",:contact_no=>""}}
+        put :update, {:id => @member.id, :member => {:name=>"", :email=>"", :city=>"", :contact_no=>""}}
         response.should render_template('edit')
       end
+    end
+  end
+
+  describe "delete" do
+    before :each do
+      @member = Factory :member, :name => "Hephzibah", :contact_no => "011-25468989", :city => "New Delhi"
+    end
+
+    it "should delete the corresponding record" do
+      delete :destroy, {:id => @member.id}
+      Member.where(:id => @member.id).should == []
+    end
+
+    it "should redirect to the root path" do
+      delete :destroy, {:id => @member.id}
+      response.should redirect_to(root_path)
     end
   end
 end
